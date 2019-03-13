@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/control', 'AdminController@admin')    
     ->middleware('is_admin')    
     ->name('control.index');
+
+
+
+Route::resource('accountsmanagement','UsersController');
