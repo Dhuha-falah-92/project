@@ -42,7 +42,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Last Update</th>
+                         
                             <th>Options</th>
                           
                         </tr>
@@ -53,7 +53,7 @@
                                 <td>{{ ++$i }}</td>
                                 <td>{{ $dataa->name}}</td>
                                 <td>{{ $dataa->email}}</td>
-                                <td>{{ $dataa->updated_at}}</td>
+                            
                                 <td>
                                     <a class="btn btn-outline-info" href="{{ route('accountsmanagement.show',$dataa->id) }}">Show</a>
                                     <a class="btn btn-outline-success" href="{{ route('accountsmanagement.edit',$dataa->id) }}">Edit</a>
@@ -71,7 +71,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Last Update</th>
+                                
                                 <th>Options</th>
                                 
                         </tr>

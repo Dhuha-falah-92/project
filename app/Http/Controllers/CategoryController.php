@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Http\Controllers\Validator;
-class UsersController extends Controller
+use App\Category;
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,12 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $data = User::latest()->paginate(10);
-        return view('control.accountsmanagement.index',compact('data'))
+       
+        $data = Category::latest()->paginate(10);
+        return view('control.categories.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +27,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('control.accountsmanagement.create');
+        return view('control.categories.create');
+
     }
 
     /**
@@ -39,13 +41,13 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'details' => ['required', 'string', 'max:255'],
+      
         ]);
-        User::create($request->all());
+        Category::create($request->all());
    
-        return redirect()->route('accountsmanagement.index')
-                        ->with('success','Account created successfully.');
+        return redirect()->route('categories.index')
+                        ->with('success','Category created successfully.');
     }
 
     /**
@@ -56,8 +58,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-       $data=User::find($id);
-        return view('control.accountsmanagement.show',compact('data'));
+        //
     }
 
     /**
@@ -68,8 +69,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $data=User::find($id);
-        return view('control.accountsmanagement.edit',compact('data'));
+        //
     }
 
     /**
@@ -81,16 +81,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-        ]);
-        $data=User::find($id);
-        $data->update($request->all());
-  
-        return redirect()->route('accountsmanagement.index')
-                        ->with('success','Account updated successfully');
+        //
     }
 
     /**
@@ -101,10 +92,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $data=User::find($id);
-        $data->delete();
-  
-        return redirect()->route('accountsmanagement.index')
-                        ->with('success','Product deleted successfully');
+        //
     }
 }
