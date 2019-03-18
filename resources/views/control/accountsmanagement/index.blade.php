@@ -12,7 +12,7 @@
 
 <div class="card">
         <div class="card-body">
-            <h5 class="card-title">All Users</h5>
+           
 
             <div class="row">
                     <div class="col-lg-12 margin-tb">
@@ -37,7 +37,7 @@
 
             <div class="table-responsive">
                 <table id="zero_config" class="table table-striped table-bordered">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

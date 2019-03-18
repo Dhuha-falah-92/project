@@ -45,7 +45,7 @@ class UsersController extends Controller
         User::create($request->all());
    
         return redirect()->route('accountsmanagement.index')
-                        ->with('success','Product created successfully.');
+                        ->with('success','Account created successfully.');
     }
 
     /**
@@ -68,7 +68,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=User::find($id);
+        return view('control.accountsmanagement.edit',compact('data'));
     }
 
     /**
@@ -80,7 +81,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        $data=User::find($id);
+        $data->update($request->all());
+  
+        return redirect()->route('accountsmanagement.index')
+                        ->with('success','Account updated successfully');
     }
 
     /**
@@ -91,6 +101,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=User::find($id);
+        $data->delete();
+  
+        return redirect()->route('accountsmanagement.index')
+                        ->with('success','Product deleted successfully');
     }
 }
