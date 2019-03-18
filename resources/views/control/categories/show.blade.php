@@ -6,10 +6,10 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Accounts</h2>
+                <h2> Show Categories</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-dark" href="{{ route('accountsmanagement.index') }}"> Back</a>
+                <a class="btn btn-outline-dark" href="{{ route('categories.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
             </th>
         </tr>
         <tr>
-            <th scope="col">Email  
-                <td>{{ $data->email}}</td></th>
+            <th scope="col">Detials  
+                <td>{{ $data->details}}</td></th>
         </tr>
         <tr>
             <th scope="col">Cearted  
