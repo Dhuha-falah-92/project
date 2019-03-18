@@ -5,21 +5,36 @@
 
 
 
-<div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
+
+     
         <div class="row">
             <div class="col-12">
 
 <div class="card">
         <div class="card-body">
             <h5 class="card-title">All Users</h5>
+
+            <div class="row">
+                    <div class="col-lg-12 margin-tb">
+                        <div class="pull-left">
+                            <h2>Users Account Management </h2>
+                        </div>
+                        <div class="pull-right">
+                            <a class="btn btn-outline-primary" href="{{ route('accountsmanagement.create') }}"> Create New User</a>
+                        </div>
+                    </div>
+                </div>
+
+
             @if ($message = Session::get('success'))
+
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
+
     @endif
+            <div class="row">
+
             <div class="table-responsive">
                 <table id="zero_config" class="table table-striped table-bordered">
                     <thead>
@@ -40,11 +55,11 @@
                                 <td>{{ $dataa->email}}</td>
                                 <td>{{ $dataa->updated_at}}</td>
                                 <td>
-                                    <a class="btn btn-outline-primary" href="{{ route('accountsmanagement.show',$dataa->id) }}">Show</a>
-                                    {{-- <a class="btn btn-primary" href="{{ route('control.accountsmanagement.edit',$dataa->id) }}">Edit</a>
-                                    {!! Form::open(['method' => 'DELETE','route' => ['control.accountsmanagement.destroy', $dataa->id],'style'=>'display:inline']) !!}
-                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                    {!! Form::close() !!} --}}
+                                    <a class="btn btn-outline-info" href="{{ route('accountsmanagement.show',$dataa->id) }}">Show</a>
+                                    <a class="btn btn-outline-success" href="{{ route('accountsmanagement.edit',$dataa->id) }}">Edit</a>
+                                    {!! Form::open(['method' => 'DELETE','route' => ['accountsmanagement.destroy', $dataa->id],'style'=>'display:inline']) !!}
+                                    {!! Form::submit('Delete', ['class' => 'btn btn-outline-danger']) !!}
+                                    {!! Form::close() !!}
                                 </td>
                         </tr>
                         @endforeach
@@ -65,7 +80,7 @@
             
             {!! $data->render() !!}
             </div>
-        </div></div></div>
+        </div></div>
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Controllers\Validator;
 class UsersController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('control.accountsmanagement.create');
     }
 
     /**
@@ -36,7 +37,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        User::create($request->all());
+   
+        return redirect()->route('accountsmanagement.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**
@@ -45,9 +54,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $data)
+    public function show($id)
     {
-       
+       $data=User::find($id);
         return view('control.accountsmanagement.show',compact('data'));
     }
 
