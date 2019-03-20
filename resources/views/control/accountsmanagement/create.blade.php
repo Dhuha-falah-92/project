@@ -3,8 +3,15 @@
 @section('content')
 
 
+
 <div class="card">
-        <div class="card-header">{{ __('Register') }}</div>
+        <div class="card-header">{{ __(' ') }}
+            <div class="pull-left">
+     
+                <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('accountsmanagement.index') }}"> </a> Create New User   </h2>
+
+            </div>
+        </div>
 
         <div class="card-body">
             <form method="POST" action="{{ route('accountsmanagement.store') }}">
@@ -70,4 +77,6 @@
             </form>
         </div>
     </div>
+  
+  </div>
 @endsection

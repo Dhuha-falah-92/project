@@ -2,6 +2,16 @@
 
 @section('content')
 
+<div class="card">
+        <div class="card-header">{{ __(' ') }}
+                <div class="pull-left">
+               
+                    <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('categories.index') }}"> </a>Edit Category Information  </h2>
+
+                    
+                </div>
+            </div>
+        
 <div class="card-body">
     <form action="{{ route('categories.update',$data->id) }}" method="POST">
         @csrf
@@ -27,5 +37,5 @@
    
     </form>
 </div>
-
+</div>
 @endsection

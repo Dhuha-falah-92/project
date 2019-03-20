@@ -48,16 +48,16 @@
                             <b class="logo-icon p-l-10">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                {{-- <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" /> --}}
                                
                             </b>
                             <!--End Logo icon -->
                              <!-- Logo text -->
-                            <span class="logo-text">
+                            {{-- <span class="logo-text">
                                  <!-- dark Logo text -->
                                  <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />
                                 
-                            </span>
+                            </span> --}}
                             <!-- Logo icon -->
                             <!-- <b class="logo-icon"> -->
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -220,11 +220,11 @@
                         <nav class="sidebar-nav">
                             <ul id="sidebarnav" class="p-t-30">
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('control.index')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('accountsmanagement.index')}}" aria-expanded="false"><i class="mdi mdi-account-settings-variant"></i><span class="hide-menu">Users Management</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('categories.index')}}" aria-expanded="false"><i class="mdi mdi-checkbox-multiple-blank-outline"></i><span class="hide-menu">Category</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('accountsmanagement.index')}}" aria-expanded="false"><i class="mdi mdi-account-settings-variant"></i><span class="hide-menu">Users </span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('categories.index')}}" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="hide-menu">Categories</span></a></li>
 
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Widgets</span></a></li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Tables</span></a></li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route ('posts.index')}}" aria-expanded="false"><i class="mdi mdi-library-books"></i><span class="hide-menu">Posts</span></a></li>
+                                {{-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Tables</span></a></li>
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Full Width</span></a></li>
                                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
                                     <ul aria-expanded="false" class="collapse  first-level">
@@ -262,7 +262,7 @@
                                         <li class="sidebar-item"><a href="error-405.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 405 </span></a></li>
                                         <li class="sidebar-item"><a href="error-500.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 500 </span></a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </nav>
                         <!-- End Sidebar navigation -->
@@ -287,7 +287,7 @@
         {{-- <main class="py-4"> --> --}}
            
         {{-- </main> --}}
-    </div> -->
+    </div> 
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>

@@ -26,4 +26,5 @@ Route::get('/control', 'AdminController@admin')
 
 Route::resource('accountsmanagement','UsersController');
 Route::resource('categories','CategoryController');
+Route::resource('posts','PostsController');
 

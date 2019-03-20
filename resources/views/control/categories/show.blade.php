@@ -2,17 +2,29 @@
 
 @section('content')
 
+
+
+
 <div class="container-fluid">
-<div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Categories</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-outline-dark" href="{{ route('categories.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
+
+
+                <div class="card">
+        
+                        <div class="card-header">{{ __(' ') }}
+                                <div class="pull-left">
+                                        
+                                    <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('categories.index') }}"> </a> Show Category Details  </h2>
+                                </div>
+                            </div>
+                    
+                    <div class="card-body">
+
+
+
+
+
+
+
 
 
 
@@ -49,7 +61,7 @@
         </tbody>
       </table>
 </div>
-
+                </div>
 
 
 

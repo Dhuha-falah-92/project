@@ -11,19 +11,25 @@
             <div class="col-12">
 
 <div class="card">
+        <div class="card-header">{{ __(' ') }}
+                <div class="pull-left">
+                    <h2>Users Account Management </h2>
+                </div>
+            </div>
+    
         <div class="card-body">
            
 
             <div class="row">
-                    <div class="col-lg-12 margin-tb">
-                        <div class="pull-left">
-                            <h2>Users Account Management </h2>
-                        </div>
+                  
+                        
+                     
                         <div class="pull-right">
                             <a class="btn btn-outline-primary" href="{{ route('accountsmanagement.create') }}"> Create New User</a>
                         </div>
-                    </div>
+                    
                 </div>
+                <hr class="my-4">
 
 
             @if ($message = Session::get('success'))
@@ -36,8 +42,8 @@
             <div class="row">
 
             <div class="table-responsive">
-                <table id="zero_config" class="table table-striped table-bordered">
-                    <thead class="thead-dark">
+                <table id="zero_config" class="table  table-bordered">
+                    <thead class="thead-light">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
@@ -66,7 +72,7 @@
    
                        
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                                 <th>ID</th>
                                 <th>Name</th>
@@ -75,7 +81,7 @@
                                 <th>Options</th>
                                 
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                 </table>
             
             {!! $data->render() !!}

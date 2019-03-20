@@ -4,25 +4,18 @@
 
 <div class="container-fluid">
 
-                <div class="card">
-        
-                        <div class="card-header">{{ __(' ') }}
-                                <div class="pull-left">
-                                        
-                                    <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('accountsmanagement.index') }}"> </a> Show User Details  </h2>
-                                </div>
-                            </div>
-                    
-                    <div class="card-body">
+        <div class="card">
 
-
-
-
-
-
-
-
-
+                <div class="card-header">{{ __(' ') }}
+                        <div class="pull-left">
+                                
+                            <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('posts.index') }}"> </a> Show Post Details  </h2>
+                        </div>
+                    </div>
+            
+            <div class="card-body">
+           
+              
 
 
     <table class="table table-striped table-dark">
@@ -40,8 +33,8 @@
             </th>
         </tr>
         <tr>
-            <th scope="col">Email  
-                <td>{{ $data->email}}</td></th>
+            <th scope="col">Detials  
+                <td>{{ $data->details}}</td></th>
         </tr>
         <tr>
             <th scope="col">Cearted  
@@ -57,7 +50,7 @@
           
         </tbody>
       </table>
-</div></div>
+</div></div></div>
 
 
 

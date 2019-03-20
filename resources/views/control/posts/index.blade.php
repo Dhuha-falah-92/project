@@ -2,29 +2,32 @@
 
 @section('content')
 
+
+
+     
 <div class="row">
         <div class="col-12">
 
 <div class="card">
-    
 
         <div class="card-header">{{ __(' ') }}
                 <div class="pull-left">
-                    <h2>Categories Management </h2>
+                    <h2>Posts Management </h2>
                 </div>
             </div>
-        
+    
     <div class="card-body">
        
 
         <div class="row">
+        
+                    
                 
-                   
-                    <div class="pull-right">
-                        <a class="btn btn-outline-primary" href="{{ route('categories.create') }}"> Create New Category</a>
+                    <div class="pull-right ">
+                        <a class="btn btn-outline-primary" href="{{ route('posts.create') }}"> Create New Post</a>
                     </div>
                 </div>
-            
+           
             <hr class="my-4">
 
         @if ($message = Session::get('success'))
@@ -41,9 +44,9 @@
                 <thead class="thead-light">
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Detals</th>
-                       
+                        <th>Title</th>
+                        <th>Category</th>
+                     
                         <th>Options</th>
                       
                     </tr>
@@ -52,14 +55,13 @@
                         @foreach ($data as $dataa)
                     <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $dataa->name}}</td>
-                            <td>{{ $dataa->details}}</td>
-                         
+                            <td>{{ $dataa->title}}</td>
+                            <td>{{ $dataa->category_id}}</td>
+                        
                             <td>
-                                <a class="btn btn-outline-info" href="{{ route('categories.show',$dataa->id) }}">Show</a>
-
-                                <a class="btn btn-outline-success" href="{{ route('categories.edit',$dataa->id) }}">Edit</a>
-                                {!! Form::open(['method' => 'DELETE','route' => ['categories.destroy', $dataa->id],'style'=>'display:inline']) !!}
+                                <a class="btn btn-outline-info" href="{{ route('posts.show',$dataa->id) }}">Show</a>
+                                <a class="btn btn-outline-success" href="{{ route('posts.edit',$dataa->id) }}">Edit</a>
+                                {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $dataa->id],'style'=>'display:inline']) !!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-outline-danger']) !!}
                                 {!! Form::close() !!}
                             </td>
@@ -71,9 +73,10 @@
                 
             </table>
         
-        {{-- {!! $data->render() !!} --}}
+        {!! $data->render() !!}
         </div>
     </div></div>
+
 
 
 

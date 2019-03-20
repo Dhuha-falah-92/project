@@ -5,14 +5,20 @@
 <div class="row">
         <div class="col-12">
                 <div class="card">
+                        <div class="card-header">{{ __(' ') }}
+                                <div class="pull-left">
+                                   
+                                    <h2> <a class="mdi mdi-arrow-left-bold-circle-outline" href="{{ route('categories.index') }}"> </a>Add Category   </h2>
+
+                                </div>
+                            </div>
+                    
                         <div class="card-body">
                            
                     
                             <div class="row">
                                     <div class="col-lg-12 margin-tb">
-                                        <div class="pull-left">
-                                            <h2>Add Categories  </h2>
-                                        </div>
+                                     
                                       
                                     </div>
                                 </div>
