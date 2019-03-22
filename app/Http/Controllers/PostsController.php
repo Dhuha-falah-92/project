@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\Category;
+
 class PostsController extends Controller
 {
     /**
@@ -25,7 +27,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('control.posts.create');
+        $data=Category::all();
+        return view('control.posts.create',compact('data'));
 
     }
 
@@ -39,11 +42,22 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255'],
+            'content' => ['required', 'image'],
+            // 'content' => ['required', 'string', 'max:255'],
             'category_id' => ['required', 'string',  'max:255'],
         ]);
-        Posts::create($request->all());
-   
+        $path=$request->content;
+        $new_path=time().$path->getClientOriginalName();
+        $path->move('uploade/imges',$new_path);
+       Posts::create([
+            'title' => $request->title,
+            'content' =>'uploade/imges'.$new_path,
+            'category_id' =>$request->category_id,
+        ]);
+
+       
+            // dd($a->all());
+//    Posts::create($request->all());
         return redirect()->route('posts.index')
                         ->with('success','Post created successfully.');
     }
@@ -56,6 +70,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+     
         $data=Posts::find($id);
         return view('control.posts.show',compact('data'));
     }
@@ -68,8 +83,13 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
+
+        // $data=Posts::find($id);
+        // return view('control.posts.edit',compact('data'));
+
+        $cate=Category::all();
         $data=Posts::find($id);
-        return view('control.posts.edit',compact('data'));
+        return view('control.posts.edit',compact('cate','data'));
     }
 
     /**

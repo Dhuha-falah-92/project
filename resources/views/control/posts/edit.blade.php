@@ -20,7 +20,7 @@
                 <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Title') }}</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title"  required autofocus>
+                    <input id="name" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" value="{{ $data->title }}" name="title"  required autofocus>
 
                     @if ($errors->has('title'))
                         <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
                 <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Content') }}</label>
 
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" required>
+                    <input id="name" type="text" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" value="{{ $data->content }}" name="content" required>
 
                     @if ($errors->has('content'))
                         <span class="invalid-feedback" role="alert">
@@ -48,13 +48,14 @@
                     <label for="name" class="col-md-2 col-form-label text-md-right">{{ __('Category_ID') }}</label>
 
                     <div class="col-md-6">
-                        <input id="name" type="text" class="form-control{{ $errors->has('category_id') ? ' is-invalid' : '' }}" name="category_id" required>
-
-                        @if ($errors->has('category_id'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('category_id') }}</strong>
-                            </span>
-                        @endif
+                            <select class="form-control" name="category_id" id="Category">
+                                    @foreach ($cate as $cat)
+                                    <option value="{{$cat->id}}" >{{$cat->name}}</option>
+                                        
+                                    @endforeach
+                                  
+                                </select>
+                        
                     </div>
                 </div>
 
