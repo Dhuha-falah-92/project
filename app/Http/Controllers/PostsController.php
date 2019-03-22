@@ -51,8 +51,9 @@ class PostsController extends Controller
         $path->move('uploade/imges',$new_path);
        Posts::create([
             'title' => $request->title,
-            'content' =>'uploade/imges'.$new_path,
+            'content' =>'uploade/imges/'.$new_path,
             'category_id' =>$request->category_id,
+            'slug'=>str_slug($request->title),
         ]);
 
        

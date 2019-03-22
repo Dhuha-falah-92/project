@@ -8,7 +8,7 @@ class Posts extends Model
 {
 use SoftDeletes;
     protected $fillable = [
-    'title', 'content','category_id',
+    'title', 'content','category_id','slug',
     ];
     protected $dates =['deleted_at' ];
 }
