@@ -28,3 +28,5 @@ Route::resource('accountsmanagement','UsersController');
 Route::resource('categories','CategoryController');
 Route::resource('posts','PostsController');
 
+// Route::get('/posts/trashed', 'PostsController@trashed')->name('posts.trashed');
+

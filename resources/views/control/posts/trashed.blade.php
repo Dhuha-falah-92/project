@@ -25,8 +25,7 @@
                 
                     <div class="pull-right ">
                         <a class="btn btn-outline-primary" href="{{ route('posts.create') }}"> Create New Post</a>
-                      
-
+                     
 
                     </div>
                 </div>
@@ -55,7 +54,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                        @foreach ($data as $dataa)
+                        @foreach ($d as $dataa)
                     <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $dataa->title}}</td>
@@ -65,11 +64,8 @@
                             <td>{{ $dataa->category_id}}</td>
                         
                             <td>
-                                <a class="btn btn-outline-info" href="{{ route('posts.show',$dataa->id) }}">Show</a>
-                                <a class="btn btn-outline-success" href="{{ route('posts.edit',$dataa->id) }}">Edit</a>
-                                {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $dataa->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-outline-danger']) !!}
-                                {!! Form::close() !!}
+                          
+                              
                             </td>
                     </tr>
                     @endforeach
@@ -79,12 +75,8 @@
                 
             </table>
         
-        {!! $data->render() !!}
+        {{-- {!! $d->render() !!} --}}
         </div>
-
-
-
-
     </div></div>
 
 
