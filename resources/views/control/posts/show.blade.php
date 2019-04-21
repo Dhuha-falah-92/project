@@ -28,13 +28,13 @@
             </th> 
         </tr>
         <tr>
-            <th scope="col">Name  
-                <td>{{ $data->name}}</td>
+            <th scope="col">Title  
+                <td>{{ $data->title}}</td>
             </th>
         </tr>
         <tr>
             <th scope="col">Detials  
-                <td>{{ $data->details}}</td></th>
+                <td>{{ $data->content}}</td></th>
         </tr>
         <tr>
             <th scope="col">Cearted  

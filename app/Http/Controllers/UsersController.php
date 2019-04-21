@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Validator;
+use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class UsersController extends Controller
      */
     public function index()
     {
+       
         $data = User::latest()->paginate(10);
         return view('control.accountsmanagement.index',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -41,8 +43,16 @@ class UsersController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
         ]);
-        User::create($request->all());
+        // User::create($request->all());
+
+        User::create([
+            'name' => $request->name,
+            'email' =>$request->email,
+            'password' =>Hash::make($request['password']),
+            'type'=>$request->type,
+        ]);
    
         return redirect()->route('accountsmanagement.index')
                         ->with('success','Account created successfully.');
@@ -107,4 +117,6 @@ class UsersController extends Controller
         return redirect()->route('accountsmanagement.index')
                         ->with('success','Product deleted successfully');
     }
+
+    
 }

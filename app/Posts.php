@@ -21,4 +21,14 @@ class Posts extends Model
     {
         return asset($content);
     }
+
+
+    public function tags()
+    {
+   
+            return $this->belongsToMany('App\Tag');
+       
+    }
+
+
 }

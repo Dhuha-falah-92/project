@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
-use App\DB;
+
 
 
 class PostsController extends Controller
@@ -137,11 +137,14 @@ class PostsController extends Controller
                         ->with('success','Post deleted successfully');
     }
 
-    // public function trashed()
-    // {
-    //     // $d=Posts::OnlyTrashed()->get();
+    public function trashed()
+    {
+        $d=Posts::OnlyTrashed()->get();
   
-    //     return redirect()->route('posts.edit');
-    //     // return view('control.posts.softdeleted')->with('d',$d);
-    // }
+        // return redirect()->route('posts.trashed');
+        return view('control.softdeleted.index')->with('d',$d);
+        //  return view('control.posts.trashed');
+    }
+
+  
 }

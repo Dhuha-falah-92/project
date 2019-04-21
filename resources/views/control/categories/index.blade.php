@@ -22,6 +22,8 @@
                    
                     <div class="pull-right">
                         <a class="btn btn-outline-primary" href="{{ route('categories.create') }}"> Create New Category</a>
+                        {{-- <a class="btn btn-outline-primary" href="{{ route ('posts.trashed') }}">  Post</a> --}}
+
                     </div>
                 </div>
             

@@ -25,7 +25,9 @@
                 
                     <div class="pull-right ">
                         <a class="btn btn-outline-primary" href="{{ route('posts.create') }}"> Create New Post</a>
-                      
+                        <a class="btn btn-outline-danger" href="{{ route ('softdelete.index') }}">Deleted  Post</a>
+
+
 
 
                     </div>
